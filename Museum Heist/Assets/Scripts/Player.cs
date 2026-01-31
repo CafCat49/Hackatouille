@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Interactable.OnInteract += OnInteractableInteracted;
+        Interactable.OnActivate += OnInteracted;
+        Interactable.OnDeactivate += OnDeactivated;
         InteractableCount = FindObjectsByType<Interactable>(FindObjectsSortMode.None).Length;
     }
 
-    private void OnInteractableInteracted()
+    private void OnInteracted()
     {
         TotalInteracted++;
         Debug.Log(TotalInteracted >= InteractableCount
@@ -20,8 +21,14 @@ public class Player : MonoBehaviour
             : "Keep going, sweetie");
     }
 
+    private void OnDeactivated()
+    {
+        if (TotalInteracted > 0) TotalInteracted -= 1;
+    }
+
     void OnDestroy()
     {
-        Interactable.OnInteract -= OnInteractableInteracted;
+        Interactable.OnActivate -= OnInteracted;
+        Interactable.OnDeactivate -= OnDeactivated;
     }
 }

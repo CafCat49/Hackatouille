@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     private int InteractableCount;
     private int TotalInteracted = 0;
+    
+    public string VictoryScene = "";
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +22,11 @@ public class Player : MonoBehaviour
         Debug.Log(TotalInteracted >= InteractableCount
             ? "You have found all interactables, good girl!"
             : "Keep going, sweetie");
+
+        if (TotalInteracted >= InteractableCount)
+        {
+            SceneManager.LoadScene(VictoryScene);
+        }
     }
 
     private void OnDeactivated()

@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe422a867341bea43a26e021b2edad25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  VictoryScene: Victory
 --- !u!1 &434058383
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 51d2c692a1353584b98fb232d79d3781
+guid: c876ddd82149898418527315c14fe761
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1175846370830642669
-    second: Windows2000-RTM-Desktop 1_0
+      213: -847028938907900102
+    second: Recycle_Bin_Windows_2000_empty_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Windows2000-RTM-Desktop 1_0
+      name: Recycle_Bin_Windows_2000_empty_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 768
+        width: 281
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dedeacb5b02715010800000000000000
-      internalID: 1175846370830642669
+      spriteID: a372be5faafbe34f0800000000000000
+      internalID: -847028938907900102
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Windows2000-RTM-Desktop 1_0: 1175846370830642669
+      Recycle_Bin_Windows_2000_empty_0: -847028938907900102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

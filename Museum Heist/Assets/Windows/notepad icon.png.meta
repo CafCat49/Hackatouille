@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 07829e4dc5fd72549ba7492fb601f42f
+guid: 5882aaa0249ed9640a6d09d38cdfebd9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4384722016312031262
-    second: Windows2000-RTM-Desktop 2_0
+      213: 6195251995078469461
+    second: notepad icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Windows2000-RTM-Desktop 2_0
+      name: notepad icon_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        y: 9
+        width: 512
+        height: 483
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e703e2be865623c0800000000000000
-      internalID: -4384722016312031262
+      spriteID: 557aeac9dd4f9f550800000000000000
+      internalID: 6195251995078469461
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Windows2000-RTM-Desktop 2_0: -4384722016312031262
+      notepad icon_0: 6195251995078469461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,7 +5,8 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
 {
     bool activated = false;
     
-    public static System.Action OnInteract;
+    public static System.Action OnActivate;
+    public static System.Action OnDeactivate;
     
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -16,12 +17,13 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
         {
             GetComponent<SpriteRenderer>().color = Color.green;
             activated = true;
-            OnInteract?.Invoke();
+            OnActivate?.Invoke();
         }
         else
         {
             GetComponent<SpriteRenderer>().color = Color.red;
             activated = false;
+            OnDeactivate?.Invoke();
         }
     }
 }

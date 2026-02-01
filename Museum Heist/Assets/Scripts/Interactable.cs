@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Interactable : MonoBehaviour, IPointerDownHandler
 {
     bool activated = false;
-    
-    public static System.Action OnActivate;
-    public static System.Action OnDeactivate;
+    public string InteractionType = "";
+    public static Action<string> OnActivate;
+    public static Action OnDeactivate;
     
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -17,7 +18,7 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
         {
             GetComponent<SpriteRenderer>().color = Color.green;
             activated = true;
-            OnActivate?.Invoke();
+            OnActivate?.Invoke(InteractionType);
         }
         else
         {

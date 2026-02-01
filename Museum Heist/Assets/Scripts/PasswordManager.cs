@@ -1,4 +1,5 @@
-using System.Collections.Generic;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,10 +11,13 @@ public class PasswordManager : MonoBehaviour
     public Button m_EnterButton;
     private char[] inputs =  new char[6];
     private int attempts = 3;
+    public TMP_Text AttemptsText;
+    public TMP_Text ResultText;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ResultText.text = "";
         m_EnterButton.onClick.AddListener(OnEnter);
         ScrollUp.OnClick += OnUpClicked;
         ScrollDown.OnClick += OnDownClicked;
@@ -21,12 +25,12 @@ public class PasswordManager : MonoBehaviour
 
     private void OnUpClicked(int index, char letter)
     {
-        inputs[index]  = letter;
+        inputs[index] = letter;
     }
 
     private void OnDownClicked(int index, char letter)
     {
-        inputs[index]  = letter;
+        inputs[index] = letter;
     }
     
     void OnDestroy()
@@ -45,18 +49,27 @@ public class PasswordManager : MonoBehaviour
 
         if (finalInput == password)
         {
-            Debug.Log("Correct password");
-            SceneManager.LoadScene("Victory");
+            ResultText.text = "Correct Password!";
+            ResultText.color = Color.green;
+            StartCoroutine(Win(3));
         }
-        else if (attempts > 0)
+        else if (attempts > 1)
         {
-            Debug.Log("Incorrect password");
+            ResultText.text = "Wrong Password!";
+            ResultText.color = Color.red;
             attempts--;
+            AttemptsText.text = "Attempts Left: " + attempts;
         }
         else
         {
             Debug.Log("Incorrect password, no attempts left");
             SceneManager.LoadScene("MainLevel");
         }
+    }
+
+    private IEnumerator Win(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene("Victory");
     }
 }

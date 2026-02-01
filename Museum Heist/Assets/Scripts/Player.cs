@@ -3,33 +3,34 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private int InteractableCount;
-    private int TotalInteracted = 0;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Interactable.OnActivate += OnInteracted;
         Interactable.OnDeactivate += OnDeactivated;
-        InteractableCount = FindObjectsByType<Interactable>(FindObjectsSortMode.None).Length;
     }
 
-    private void OnInteracted()
+    private void OnInteracted(string interactionType)
     {
-        TotalInteracted++;
-        Debug.Log(TotalInteracted >= InteractableCount
-            ? "You have found all interactables, good girl!"
-            : "Keep going, sweetie");
-
-        if (TotalInteracted >= InteractableCount)
+        switch (interactionType)
         {
-            SceneManager.LoadScene("Windows2000Hacking");
+            case "Computer":
+                SceneManager.LoadScene("Windows2000Hacking");
+                break;
+            case "Password":
+                SceneManager.LoadScene("PasswordScramble");
+                break;
+            default:
+                Debug.Log("No interaction type found");
+                break;
         }
+        
     }
 
     private void OnDeactivated()
     {
-        if (TotalInteracted > 0) TotalInteracted -= 1;
+        Debug.Log("Deactivated");
     }
 
     void OnDestroy()

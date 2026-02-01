@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(GameObject))]
-public class BSOD : MonoBehaviour
+public class ShutdownScreen : MonoBehaviour
 {
-    public GameObject BlueScreen;
+    public GameObject shutdownWindow;
 
     void Start()
     {
-        BlueScreen.GetComponent<GameObject>();
+        shutdownWindow.GetComponent<GameObject>();
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -18,14 +18,14 @@ public class BSOD : MonoBehaviour
         {
             // do the thing
             Debug.Log("I have been overlapped UwU");
-            BlueScreen.SetActive(true);
-            StartCoroutine(Restart(3));
+            shutdownWindow.SetActive(true);
+            StartCoroutine(Shutdown(3));
         }
     }
-    
-    private IEnumerator Restart(float time)
+
+    private IEnumerator Shutdown(float time)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("Windows2000Hacking");
+        SceneManager.LoadScene("MainLevel");
     }
 }

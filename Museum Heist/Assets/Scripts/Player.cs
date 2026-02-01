@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     private int InteractableCount;
     private int TotalInteracted = 0;
     
-    public string VictoryScene = "";
+    public static string VictoryScene = "Victory";
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

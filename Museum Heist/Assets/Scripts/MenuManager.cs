@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
     void CreditsButtonPressed()
     {
         Debug.Log("Showing Credits");
-        //TODO: add credits screen
+        SceneManager.LoadScene("CreditsScreen");
     }
     
     void ExitButtonPressed()

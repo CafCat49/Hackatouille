@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(GameObject))]
 public class shutdownScreen : MonoBehaviour
@@ -21,6 +22,7 @@ public class shutdownScreen : MonoBehaviour
             // do the thing
             Debug.Log("I have been overlapped UwU");
             shutdownWindow.SetActive(true);
+            SceneManager.LoadScene("PasswordScramble");
         }
     }
    

@@ -6,8 +6,6 @@ public class Player : MonoBehaviour
     private int InteractableCount;
     private int TotalInteracted = 0;
     
-    public static string VictoryScene = "Victory";
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +23,7 @@ public class Player : MonoBehaviour
 
         if (TotalInteracted >= InteractableCount)
         {
-            SceneManager.LoadScene(VictoryScene);
+            SceneManager.LoadScene("Windows2000Hacking");
         }
     }
 

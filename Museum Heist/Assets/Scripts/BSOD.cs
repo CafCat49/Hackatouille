@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(GameObject))]
 public class BSOD : MonoBehaviour
@@ -21,6 +22,7 @@ public class BSOD : MonoBehaviour
             // do the thing
             Debug.Log("I have been overlapped UwU");
             BlueScreen.SetActive(true);
+            SceneManager.LoadScene("MainLevel");
         }
     }
    

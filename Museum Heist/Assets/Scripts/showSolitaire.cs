@@ -1,29 +1,27 @@
-using System;
 using UnityEngine;
 
-
-[RequireComponent(typeof(AudioSource))]
-public class PlaySoundOnOverlap : MonoBehaviour
+[RequireComponent(typeof(GameObject))]
+public class showSolitaire : MonoBehaviour
 {
     public AudioClip ErrorSound;
-    private AudioSource audioSource;
     public Transform groundCheckPos;
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask groundLayer;
+    public GameObject Solitaire;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        Solitaire.GetComponent<GameObject>();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             // do the thing
             Debug.Log("I have been overlapped UwU");
-            audioSource.PlayOneShot(ErrorSound);
+            Solitaire.SetActive(true);
         }
     }
-    
+
 }

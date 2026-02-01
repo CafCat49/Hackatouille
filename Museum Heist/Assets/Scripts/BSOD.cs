@@ -14,7 +14,7 @@ public class BSOD : MonoBehaviour
     {
         BlueScreen.GetComponent<GameObject>();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -24,11 +24,5 @@ public class BSOD : MonoBehaviour
             BlueScreen.SetActive(true);
             SceneManager.LoadScene("MainLevel");
         }
-    }
-   
-    private void onDrawGizmosSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 }

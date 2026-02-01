@@ -14,7 +14,7 @@ public class shutdownScreen : MonoBehaviour
     {
         shutdownWindow.GetComponent<GameObject>();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -25,10 +25,5 @@ public class shutdownScreen : MonoBehaviour
             SceneManager.LoadScene("PasswordScramble");
         }
     }
-   
-    private void onDrawGizmosSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
-    }
+
 }

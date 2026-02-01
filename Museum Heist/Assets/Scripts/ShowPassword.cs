@@ -28,7 +28,7 @@ public class showPassword : MonoBehaviour
     {
         passwordWindow.GetComponent<GameObject>();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -38,10 +38,5 @@ public class showPassword : MonoBehaviour
             passwordWindow.SetActive(true);
         }
     }
-   
-    private void onDrawGizmosSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
-    }
+
 }

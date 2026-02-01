@@ -8,7 +8,7 @@ public class PasswordManager : MonoBehaviour
 {
     private string password = "LOUVRE";
     public string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public Button m_EnterButton;
+    public Button m_EnterButton, m_ExitButton;
     private char[] inputs =  new char[6];
     private int attempts = 3;
     public TMP_Text AttemptsText;
@@ -19,6 +19,7 @@ public class PasswordManager : MonoBehaviour
     {
         ResultText.text = "";
         m_EnterButton.onClick.AddListener(OnEnter);
+        m_ExitButton.onClick.AddListener(OnExit);
         Scroll.OnUpClick += OnUpClicked;
         Scroll.OnDownClick += OnDownClicked;
     }
@@ -65,6 +66,11 @@ public class PasswordManager : MonoBehaviour
             Debug.Log("Incorrect password, no attempts left");
             SceneManager.LoadScene("MainLevel");
         }
+    }
+
+    public void OnExit()
+    {
+        SceneManager.LoadScene("MainLevel");
     }
 
     private IEnumerator Win(float time)

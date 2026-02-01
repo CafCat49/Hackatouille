@@ -19,10 +19,10 @@ public class PasswordManager : MonoBehaviour
     {
         ResultText.text = "";
         m_EnterButton.onClick.AddListener(OnEnter);
-        ScrollUp.OnClick += OnUpClicked;
-        ScrollDown.OnClick += OnDownClicked;
+        Scroll.OnUpClick += OnUpClicked;
+        Scroll.OnDownClick += OnDownClicked;
     }
-
+    
     private void OnUpClicked(int index, char letter)
     {
         inputs[index] = letter;
@@ -35,10 +35,10 @@ public class PasswordManager : MonoBehaviour
     
     void OnDestroy()
     {
-        ScrollUp.OnClick -= OnUpClicked;
-        ScrollDown.OnClick -= OnDownClicked;
+        Scroll.OnUpClick  -= OnUpClicked;
+        Scroll.OnDownClick -= OnDownClicked;
     }
-
+    
     public void OnEnter()
     {
         string finalInput = string.Empty;

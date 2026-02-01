@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public GameObject securityCam;
+    private SpriteRenderer securityCamRenderer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        securityCamRenderer = securityCam.GetComponent<SpriteRenderer>();
         Interactable.OnActivate += OnInteracted;
         Interactable.OnDeactivate += OnDeactivated;
     }
@@ -21,6 +24,9 @@ public class Player : MonoBehaviour
             case "Password":
                 SceneManager.LoadScene("PasswordScramble");
                 break;
+            case "Camera":
+                if (securityCam && securityCamRenderer) securityCamRenderer.flipX = true;
+                break;
             default:
                 Debug.Log("No interaction type found");
                 break;
@@ -28,9 +34,12 @@ public class Player : MonoBehaviour
         
     }
 
-    private void OnDeactivated()
+    private void OnDeactivated(string interactionType)
     {
-        Debug.Log("Deactivated");
+        if (interactionType == "Camera")
+        {
+            if (securityCam && securityCamRenderer) securityCamRenderer.flipX = false;
+        }
     }
 
     void OnDestroy()

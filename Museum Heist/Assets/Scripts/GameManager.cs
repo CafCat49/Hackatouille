@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager Instance;
+    public static GameManager Instance;
     public TMP_Text timerText;
-    public float gameTime = 0f;
+    private float gameTime = 10f;
+    private float timeRemaining;
 
     private void Awake()
     {
@@ -19,11 +21,22 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        timeRemaining = gameTime;
+    }
+
     private void Update()
     {
-        gameTime += Time.deltaTime;
-
-        if (timerText) DisplayTime(gameTime);
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            if (timerText) DisplayTime(timeRemaining);
+        }
+        else
+        {
+            SceneManager.LoadScene("Loss");
+        }
     }
 
     private void DisplayTime(float time)
@@ -32,5 +45,11 @@ public class GameManager : MonoBehaviour
         float seconds = Mathf.FloorToInt(time % 60);
         
         timerText.text = $"{minutes:00}:{seconds:00}";
+    }
+    
+    public void SetTimerText(TMP_Text textComponent)
+    {
+        timerText = textComponent;
+        DisplayTime(timeRemaining);
     }
 }

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public TMP_Text timerText;
-    private float gameTime = 10f;
+    private float gameTime = 480f;
     private float timeRemaining;
 
     private void Awake()

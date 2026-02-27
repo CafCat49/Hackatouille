@@ -10,6 +10,7 @@ Space to jump
 
 Credits:
 Christina - Programming, UI design, puzzle logic
+
 Rain - Programming, Gameplay design, Asset design
 
 We did not use lazy AI tools, we use stock images.

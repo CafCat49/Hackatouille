@@ -26,8 +26,6 @@ Core gameplay elements include:
 * Game objectives or puzzles
 * Basic scoring or progression mechanics
 
-*(Adjust this section if your game has specific mechanics like stealth, puzzles, combat, etc.)*
-
 ---
 
 ## Tech Stack
